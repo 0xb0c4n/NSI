@@ -85,4 +85,4 @@ def main(new_x, new_y, k):
     print("Le label le plus représenté est", espece)
     print("Il a atteint ", nb, "occurences sur les ", k, "possibles")
 
-main(1.5,0.6,5)
+main(1.5,0.3,5)

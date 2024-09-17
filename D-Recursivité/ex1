@@ -1,0 +1,5 @@
+1/ Donner une définition récursive qui correspond au calcul de la fonction factorielle n!
+
+fact(n) = {1 si n = 0            }
+          {n * fact(n-1) si n > 0}
+           

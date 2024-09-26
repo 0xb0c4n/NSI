@@ -7,9 +7,8 @@ def coef(n,p):
 triangle = []
 for i in range(10):
 	ligne = []
-	for j in range(i):
-		ligne.append(coef(i,j))
-	ligne.append(1)
+	for j in range(i+1):
+		ligne.append(coef(i,j)
 	triangle.append(ligne)
 
 for elt in triangle:

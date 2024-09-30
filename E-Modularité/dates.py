@@ -29,9 +29,8 @@ def union(s1,s2):
 def inter(s1,s2):
     result = []
     for elt in s1:
-        for elt2 in s2:
-            if elt in s2 and elt not in result:
-                result.append(elt)
+        if elt in s2 and elt not in result:
+            result.append(elt)
     
     return result
 

@@ -1,4 +1,4 @@
-from recursivity.ex5 import pgcd
+from nsi.recursivity.ex5 import pgcd
 
 class Fraction:
     def __init__(self, num, den):

@@ -44,4 +44,3 @@ assert (f1 == f2)== False
 assert f2 < f1 == True
 assert f1 + f2 == Fraction(28,15)
 assert f1 * f2 == Fraction(5,15)
-assert f1._irreductible

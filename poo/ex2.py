@@ -3,8 +3,8 @@ from nsi.recursivity.ex5 import pgcd
 class Fraction:
     def __init__(self, num, den):
         pgcdn = pgcd(num, den)
-        self.num = num / pgcdn
-        self.den = den /pgcd
+        self.num = num // pgcdn
+        self.den = den // pgcd
         
         if self.den <= 0:
             raise ValueError

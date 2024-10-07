@@ -2,14 +2,12 @@ from nsi.recursivity.ex5 import pgcd
 
 class Fraction:
     def __init__(self, num, den):
-        self.num = num
-        self.den = den
-    
+        pgcdn = pgcd(num, den)
+        self.num = num / pgcdn
+        self.den = den /pgcd
         
         if self.den <= 0:
             raise ValueError
-
-        return _irreductible(Fraction(num,den))
         
     def __str__(self):
         if(self.den) == 1:
@@ -34,14 +32,7 @@ class Fraction:
 
     def __mul__(self, j):
         return Fraction(self.num * j.num, self.den * j.den)
-    
-    def _irreductible(self):
-        if self.num > self.den:
-            pgcdn = pgcd(self.num, self.den)
-        else:
-            pgcdn = pgcd(self.den, self.num) 
-        
-        return Fraction(self.num / pgcdn, self.den / pgcdn)
+
 
 
 # Jeu de tests

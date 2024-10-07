@@ -4,9 +4,12 @@ class Fraction:
     def __init__(self, num, den):
         self.num = num
         self.den = den
+    
         
         if self.den <= 0:
             raise ValueError
+
+        return _irreductible(Fraction(num,den))
         
     def __str__(self):
         if(self.den) == 1:

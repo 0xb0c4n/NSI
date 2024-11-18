@@ -47,5 +47,3 @@ assert h.addresse_courante is None
 h.aller_a("www.github.com")
 assert h.addresses_suivantes is None
 
-h.aller_a("www.stackoverflow.com") 
-assert 

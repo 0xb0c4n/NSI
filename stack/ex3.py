@@ -1,20 +1,27 @@
 from Pile import *
-from File import *
 
-def parenthese_ferme(string, index):
-    p = creer_file()
-    for i in range(len(string)):
-        if index >= len(string):
-            return None
-        elif i == index:
-            precedent = p.retirer()
-            if precedent['char'] == '(':
-                return precedent['index']
-            else:
-                return None
+operateurs = ["*", "+"]
+def inverse_polonais(string):
+    pile = creer_pile()
+    tab = string.split()
+    for letter in tab:
+        if letter in operateurs:
+            op1 = pile.depiler()
+            op2 = pile.depiler()
+            result = op1 + op2 if letter == "+" else op1*op2
+            pile.empiler(result)
         else:
-            if string[i] in '()':
-                p.ajouter({"char": string[i], "index": i})
-
-print(parenthese_ferme("zet(gtrt()())0",9))
-print(parenthese_ferme("zet(gtrt()())0",2))
+            try:
+                pile.empiler(int(letter))
+            except:
+                pass
+    if len(pile) != 1:
+        return None
+    else:
+        return pile.depiler()
+    
+print(inverse_polonais("1 2 3 * + 4 *"))
+print(inverse_polonais("1 2 3 + 4 *"))
+print(inverse_polonais("1 2 3 * + 4"))
+print(inverse_polonais(""))
+print(inverse_polonais("a"))

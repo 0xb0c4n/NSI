@@ -14,7 +14,7 @@ class FileBornée:
         if self.est_pleine():
             raise IndexError("La liste est pleine")
         else:
-            self._tab[self.premier+self._nb%len(self._tab)] = e
+            self._tab[(self.premier+self._nb)%len(self._tab)] = e
             self._nb+=1
 
     def retirer(self):

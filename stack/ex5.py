@@ -12,7 +12,10 @@ def check_format(string):
             pr = pile.depiler()
             if dico[pr] != letter:
                 return False
-    return True
+    if pile.est_vide():
+        return False
+    else:
+        return True
 
 print(check_format("retr([])"))
 print(check_format("retr([)]"))

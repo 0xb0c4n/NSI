@@ -10,7 +10,7 @@ class Angle:
         return str(self.angle) + " degrés"
         
     def ajoute(self, Angle2):
-        calcul = self.angle + Angle2.angle
+        calcul = self.angle + Angle2.angl
         if calcul > 360:
             self.angle = calcul % 360
         else:

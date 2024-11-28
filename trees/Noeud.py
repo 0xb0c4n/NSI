@@ -5,7 +5,7 @@ class Noeud:
         self.droite = d
 
     def __eq__(self, n2):
-        if self is None and n2 is None:
+        if n2 is None:
             return True
         else:
             return self.gauche == n2.gauche and self.valeur == n2.valeur and self.droite == self.droite

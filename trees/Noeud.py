@@ -7,8 +7,10 @@ class Noeud:
     def __eq__(self, n2):
         if n2 is None:
             return True
+        elif self.valeur != n2.valeur:
+            return False
         else:
-            return self.gauche == n2.gauche and self.valeur == n2.valeur and self.droite == self.droite
+            return self.gauche == n2.gauche and self.droite == self.droite
         
 def taille(a):
     if a is None:

@@ -18,8 +18,11 @@ def ajoute(a, e):
         elif a.valeur > e:
             return Noeud(ajoute(a.gauche, e), a.valeur, a.droite)
         else:
-            return Noeud(a.gauche, a.valeur, ajoute(a.droite, e))
+            if a.valeur != e:
+                return Noeud(a.gauche, a.valeur, ajoute(a.droite, e))
+            else:
+                return Noeud(a.gauche, a.valeur, a.droite)
     
 test = Noeud(None, 15, None)
-ajoute(test, 5)
+test = ajoute(test, 5)
 print(str_arbre(test))

@@ -1,0 +1,6 @@
+1) Ce type de tri paraît peut efficace car il présente les actions suivantes : 
+        - Boucler sur le tableau : n actions dans le pire des cas
+        - Ajouter à un ABR : n actions dans le pire des cas
+        - Récupérer dans l'ordre infixe les éléments de l'ABR : n actions dans tous les cas
+
+2) Ce mélange a une compléxité linéaire O(n) 

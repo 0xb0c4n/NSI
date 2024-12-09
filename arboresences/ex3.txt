@@ -1,0 +1,3 @@
+Le troisieme cas est faux car <b></B> (non-respect de la casse)
+Le quatrième est faux car aucune balise fermante pour <b>
+Le septième est faux car deux mêmes attributs pour la même balise

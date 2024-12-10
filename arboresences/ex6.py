@@ -11,6 +11,6 @@ def gen_doc(n):
     print(type(doc))
     
     with open("docn.xml", mode="w", encoding="utf8") as f:
-        f.write(doc.toxml())
+        f.write(doc.toprettyxml())
 
 gen_doc(8)

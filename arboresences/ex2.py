@@ -14,5 +14,5 @@ def repertoires(r):
     arbre = Noeud(dir_name, liste)
     return arbre
 
-arbre = repertoires("/home/tnsi-eleve5/nsi/ABR")
+arbre = repertoires("/home/tnsi-eleve5/nsi")
 print(affiche(arbre, 1))

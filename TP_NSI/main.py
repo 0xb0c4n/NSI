@@ -4,7 +4,11 @@ import math
 import matplotlib.pyplot as plt
 
 def valide(ligne):
-    return {key: float(ligne[key]) for key in ligne}
+    return {
+        "petal_length": float(ligne["petal_length"]),
+        "petal_width": float(ligne["petal_width"]),
+        "species": int(ligne["species"])
+    }
 
 def readCSV(rep: str, fic: str) -> list:
     fic = os.path.join(rep, fic)
@@ -18,15 +22,17 @@ def distance(x1: float, y1: float, x2: float, y2: float) -> float:
 
 def aj_distance(new_x: float, new_y:float, data:list) -> None:
     for ligne in data:
-        ligne["distance"] = distance(ligne["petal_length"], new_x, ligne["petal_width"], new_y)
+        ligne["distance"] = distance(ligne["petal_length"], ligne["petal_width"], new_x, new_y)
 
 def trier(data:list, cle:str) -> None:
     for i in range(1, len(data)):
         j = i
-        while j > 0 and data[j-1][cle] > data[i][cle]:
+        m = dict(data[i])
+        while j > 0 and data[j-1][cle] > m[cle]:
             data[j] = data[j-1]
+
             j -= 1
-        data[j] = data[i]
+        data[j] = m
 
 fleurs = readCSV("", "iris.csv")
 
@@ -54,12 +60,21 @@ def knn(new_x:float, new_y:float, data:list, k:int):
     aj_distance(new_x, new_y, data)
     trier(data, "distance")
     species = [data[i]["species"] for i in range(k)]
-    def count(da:list)->dict:
+    def count()->dict:
         dico = {0: 0, 1: 0, 2: 0}
         for elt in species:
             dico[elt]+=1
         return dico
-    dico = count(species)
-    return max(dico.values())
+    
+    def maxi(elt:dict):
+        maxim = 0
+        for key in elt:
+            if elt[key] > elt[maxim]:
+                maxim = key
+        return maxim
+    
+    dico = count() 
+    print(dico)
+    return maxi(dico)
 
-print(knn(1,2,fleurs,2))
+print(knn(5,1.5,fleurs,9))

@@ -59,6 +59,7 @@ def affichage(data:list) -> None:
 def knn(new_x:float, new_y:float, data:list, k:int):
     aj_distance(new_x, new_y, data)
     trier(data, "distance")
+    affichage(fleurs)
     species = [data[i]["species"] for i in range(k)]
     def count()->dict:
         dico = {0: 0, 1: 0, 2: 0}
@@ -77,4 +78,4 @@ def knn(new_x:float, new_y:float, data:list, k:int):
     print(dico)
     return maxi(dico)
 
-print(knn(5,1.5,fleurs,9))
+print(knn(5,2,fleurs,9))

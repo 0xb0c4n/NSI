@@ -16,7 +16,7 @@ class Usager:
         self.c.execute('DELETE FROM emprunt WHERE isbn = ?', [isbn])
         
     def emprunts(self):
-        self.c.execute('SELECT * FROM emprunt WHERE code_barre = ?', [self.code_barre])
+        self.c.execute('SELECT retour, titre, emprunt.isbn FROM emprunt JOIN livre ON emprunt.isbn = livre.isbn WHERE emprunt.code_barre = ?', [self.code_barre])
         return self.c.fetchall()
 
 u = Usager("137332830764072")

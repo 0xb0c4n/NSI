@@ -1,0 +1,15 @@
+import threading
+
+verrou1 = threading.Lock()
+verrou2 = threading.Lock()
+
+def f1():
+	verrou1.acquire()
+	print("Led1 acquise : p1")
+	verrou2.acquire()
+	print("Led2 acquise : p2")
+	verrou2.release()
+	veirerrou1.release()
+
+def f2():u
+	verrou1.acq

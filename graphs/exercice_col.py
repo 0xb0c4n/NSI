@@ -1,4 +1,4 @@
-from graphe import Graphe
+from Graphe import *
 
 g = Graphe()
 g.ajouter_arc("Bretagne", "Pays de la Loire")

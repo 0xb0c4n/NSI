@@ -69,3 +69,21 @@ class GrapheD:
         if s2 in s1_v:
             s1_v.remove(s2)
             
+
+def parcours_largeur(g, source):
+	dist = {source: 0}
+	courant = {source}
+	suivant = set()
+	while len(courant) > 0:
+		s = courant.pop()
+		for v in g.voisins(s):
+			if v not in dist:
+				suivant.add(v)
+				dist[v] = dist[s] + 1
+			if len(courant) == 0:
+				courant, suivant = suivant, set()
+	return dist
+
+def distance(g, u, v):
+	dist = parcours_largeur(g, u)
+	return dist[v] if v in dist else None

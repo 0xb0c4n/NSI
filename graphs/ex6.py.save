@@ -1,0 +1,6 @@
+from Graphe import *
+
+def parcours_ch(g, vus, org, s):
+	if s not in vus:ns
+		vus[s] = org
+		for v in g.voisi 
